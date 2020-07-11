@@ -3,17 +3,48 @@
   <head>
     <meta charset="UTF-8">
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <!-- <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
     <title>Hello World!</title>
+    
+    <link rel="stylesheet" href="./static/css/main.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
-
+    <section id="step1">
+      <form id="selectDir">
+        <div class="filedrop">
+          <div class="filedrop__overlay">
+            <div class="section-head">
+              <i class='bx bx-image-add'></i>
+              <h4 class="section-head__pre">Stap 1</h4>
+              <h2 class="section-head__title">Importeer je foto's</h2>
+            </div>
+            <div class="filedrop__about">
+              Sleep een map met foto's naar hier
+            </div>
+          </div>
+          <input class="filedrop__input" type="file" name="path" id="path">
+        </div>
+      </form>
+    </section>
+  
+    <section id="step2">
+      <div id="photoList">
+        <div class="suggestion suggestion__pre">
+          <i class='bx bx-loader'></i>
+          <h2>Begin met afbeeldingen te importeren</h2>
+          <p>Deze zullen hier verschijnen</p>
+        </div>
+      </div>
+      <div class="moderate">
+        <div class="moderate__btn moderate__btn--pos"></div>
+        <div class="moderate__btn moderate__btn--reject"></div>
+      </div>
+      <a href="#step1">opnieuw proberen</a>
+    </section>
+    
     <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+    <script type="module" src="./renderer.js"></script>
   </body>
 </html>
