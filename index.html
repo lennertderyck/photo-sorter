@@ -9,6 +9,7 @@
     
     <link rel="stylesheet" href="./static/css/main.min.css">
     <link href='https://unpkg.com/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
   </head>
   <body>
     <section id="step1">
@@ -19,31 +20,68 @@
               <i class='bx bx-image-add'></i>
               <h4 class="section-head__pre">Stap 1</h4>
               <h2 class="section-head__title">Importeer je foto's</h2>
+              <p class="section-head__post">Sleep een folder met foto's naar hier</p>
             </div>
-            <div class="filedrop__about">
-              Sleep een map met foto's naar hier
-            </div>
+            <!-- <div class="filedrop__about">
+            </div> -->
           </div>
           <input class="filedrop__input" type="file" name="path" id="path">
         </div>
       </form>
+      <!-- <a href="#step2" id="toStep2" class="btn btn--main btn--negative">volgende</a> -->
     </section>
   
     <section id="step2">
+      <div class="section-head">
+        <i class='bx bx-badge-check'></i>
+        <h4 class="section-head__pre">Stap 2</h4>
+        <h2 class="section-head__title">Markeer je foto's</h2>
+      </div>
       <div id="photoList">
         <div class="suggestion suggestion__pre">
           <i class='bx bx-loader'></i>
-          <h2>Begin met afbeeldingen te importeren</h2>
+          <h2>Begin met foto's te importeren</h2>
           <p>Deze zullen hier verschijnen</p>
         </div>
       </div>
-      <div class="moderate">
-        <div class="moderate__btn moderate__btn--pos"></div>
-        <div class="moderate__btn moderate__btn--reject"></div>
+      <div id="controls" class="controls">
+        <p id="suggestionCounter"></p>
+        <div class="moderate">
+          <div class="moderate__btn moderate__btn--accept"><i class='bx bx-like' ></i></div>
+          <div class="moderate__btn moderate__btn--reject"><i class='bx bx-dislike' ></i></div>
+        </div>
+        <a href="#step3" id="toStep3" onclick="console.log(this)" class="btn btn--main animate__animated animate__faster">volgende</a>
+        <a href="#" id="reImport" class="btn" data-action="reset"><i class='bx bx-image-add'></i> terug naar importeren</a>
       </div>
-      <a href="#step1">opnieuw proberen</a>
     </section>
     
+    <section id="step3">
+      <div class="section-head">
+        <i class='bx bx-box'></i>
+        <h4 class="section-head__pre">Stap 3</h4>
+        <h2 class="section-head__title">Verdeel je foto's</h2>
+        <p class="section-head__post">Verplaats je foto's naar een folder afhankelijk van de markering</p>
+      </div>
+      <a id="transferPhotos" class="btn btn--main animate__animated animate__faster">foto's verplaatsen</a>
+      <a href="#step2" class="btn"><i class='bx bx-arrow-back'></i> terug naar markeren</a>
+    </section>
+    
+    <section id="step4">
+      <div class="section-head">
+        <i class='bx bx-chair'></i>
+        <h4 class="section-head__pre">Stap 4</h4>
+        <h2 class="section-head__title">Leun achterover en relax</h2>
+        <p class="section-head__post">Je foto's werden succesvol ingedeeld</p>
+      </div>
+      <img class="meme" src="https://media.giphy.com/media/s2qXK8wAvkHTO/source.gif" alt="" width="300px">
+      <div class="btn-group">
+        <a data-action="openFolder" class="btn"><i class='bx bx-folder-open'></i> bekijk folder</a>
+        <a href="#" data-action="reset" class="btn"><i class='bx bx-badge-check'></i> meer foto's beoordelen</a>
+      </div>
+      <footer>
+        <p><small>Gemaakt met &lt;3 door <a href="https://www.instagram.com/lennertderyck/">@lennertderyck</a> – code beschikbaar GitHub</small></p>
+      </footer>
+    </section>
     <!-- You can also require other files to run in this process -->
     <script type="module" src="./renderer.js"></script>
   </body>
