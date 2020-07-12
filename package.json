@@ -1,12 +1,13 @@
 {
-  "name": "electron-quick-start",
+  "name": "photo-sorter",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A Electron app to sort good and bad photo's in a Tinder-like way",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "package": "electron-packager ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/lennertderyck/photo-sorter",
   "keywords": [
     "Electron",
     "quick",
@@ -14,10 +15,11 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "Lennert De Ryck",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^9.1.0"
+    "electron": "^9.1.0",
+    "electron-packager": "^15.0.0"
   },
   "dependencies": {
     "electron-reload": "^1.5.0",
