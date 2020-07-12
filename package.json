@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A Electron app to sort good and bad photo's in a Tinder-like way",
   "main": "main.js",
+  "type": "module",
   "scripts": {
     "start": "electron .",
     "package": "electron-packager ."
@@ -26,7 +27,6 @@
     "is-image": "^3.0.0",
     "move-file": "^2.0.0",
     "open": "^7.0.4",
-    "open-file-explorer": "^1.0.2",
     "sass": "^1.26.10"
   }
 }

@@ -68,15 +68,19 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const photoList = node('#photoList');
-  const addPhotoSuggestion = (name, path) => {
-    photos.push({name: name, path: path, status: 'unset'});
-    
+  const addPhotoSuggestion = (name, path) => {   
     const div = document.createElement('div');
     div.className = 'suggestion';
+    div.setAttribute('data-status','unset');
     div.innerHTML = `
-    <img class="suggestion__photo" src="${path}">
+      <img class="suggestion__photo" src="${path}">
+      <div class="moderate__status">
+        <i class='bx bx-like' ></i>
+        <i class='bx bx-dislike' ></i>
+      </div>
     `;
     photoList.appendChild(div);
+    photos.push({name: name, path: path, status: 'unset', el: div});
   }
 })
 
@@ -100,12 +104,14 @@ const nextSuggestion = (index) => {
 
 const acceptSuggestion = () => {
   photos[modIndex].status = 'accept';
+  photos[modIndex].el.setAttribute('data-status','accept');
   modIndex = modIndex+1;
-  nextSuggestion(modIndex)
+  nextSuggestion(modIndex);
 }
 
 const rejectSuggestion = () => {
   photos[modIndex].status = 'reject';
+  photos[modIndex].el.setAttribute('data-status','reject');
   modIndex = modIndex+1;
   nextSuggestion(modIndex)
 }
@@ -115,11 +121,10 @@ const suggestionCounter = () => {
 }
 
 const transferPhotos = () => {
-  console.log(node('#step4'));
-  
+  const foldernames = {accept: node('#folderNameAccept').value, reject: node('#folderNameReject').value}
   photos.forEach((photo) => {
-    console.log(folderPath, photo.name)
-    if (photo.status == 'reject') moveFile(`${folderPath}/${photo.name}`, `${folderPath}/reject/${photo.name}`);
+    if (photo.status == 'reject') moveFile(`${folderPath}/${photo.name}`, `${folderPath}/${foldernames.reject}/${photo.name}`)
+    else if (photo.status == 'accept') moveFile(`${folderPath}/${photo.name}`, `${folderPath}/${foldernames.accept}/${photo.name}`);
   })
   
   node('#step4').scrollIntoView({block: 'nearest'});
@@ -128,7 +133,6 @@ const transferPhotos = () => {
 const resetApp = () => {
   modIndex = 0;
   photos.length = 0;
-  console.log(modIndex, photos);
   node('#path').value = '';
   node('#step1').scrollIntoView({block: 'nearest'});
   location.reload();
@@ -136,9 +140,7 @@ const resetApp = () => {
 }
 
 const openPath = (path) => {
-  console.log(path)
   open(path)
-  // openExplorer(path, err => {console.log(err)});
 }
 
 

@@ -1,6 +1,7 @@
 @import './mixins';
 @import './vendors';
 @import './components';
+@import './typography';
 
 * {
     box-sizing: border-box;
@@ -26,6 +27,7 @@ a {
     .filedrop {
         position: relative;
         width: 50vw;
+        margin-bottom: 2rem;
         
         &__overlay {
             background-color: white;
@@ -68,18 +70,39 @@ a {
     scroll-behavior: smooth;
     
     .suggestion {
+        position: relative;
         margin: 50px 15px;
-        height: fit-content;
+        height: auto;
         background-color: white;
         box-shadow: 0px 0px 7px 3px #0000002e;
         border-radius: 12px;
         
-        &:first-child {
-            margin-left: 34vw;
+        &:first-child {margin-left: 34vw;}
+        &:last-child {margin-right: 34vw;}
+        
+        .moderate__status .bx.bx-like, .moderate__status .bx.bx-dislike {
+            position: absolute;
+            bottom: -20px;
+            left: calc(50% - 20px);
+            display: none;
+            padding: .5rem;
+            background-color: white;
+            border-radius: 100%;
+            box-shadow: 0px 0px 7px 3px #0000002e;
         }
         
-        &:last-child {
-            margin-right: 34vw;
+        // &[data-status="unset"] {
+        //     .bx.bx-like, .bx.bx-dislike {display: none;}
+        // }
+        
+        &[data-status="accept"] {
+            .bx.bx-like {display: block;}
+            .bx.bx-dislike {display: none;}
+        }
+        
+        &[data-status="reject"] {
+            .bx.bx-like {display: none;}
+            .bx.bx-dislike {display: block;}
         }
         
         &--selected {
@@ -93,7 +116,8 @@ a {
         }
         
         &__photo {
-            max-width: 30vw;
+            // max-width: 30vw;
+            max-height: 30vh;
             object-fit: cover;
             border-radius: inherit;
             margin-bottom: -4px;
@@ -179,9 +203,24 @@ a {
         margin-top: 1rem;
     }
     
-    a[href="#step2"] {
-        margin: 0 auto;
-        margin-top: 2rem;
+    .btn-group {
+        margin: 1rem 0;
+    }
+    
+    [data-sesam-target="folderRenaming"] {
+        // margin-top: 1rem;
+        max-height: 0vh;
+        overflow: hidden;
+        padding-bottom: 0rem;
+        
+        h2 {
+            margin-bottom: 0.5rem;
+        }
+        
+        &.sesam-show {
+            max-height: 100vh;
+            padding-bottom: 1rem;
+        }
     }
 }
 
