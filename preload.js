@@ -139,7 +139,7 @@ const nextSuggestion = () => {
       focusThumbnail(next.el);
       suggestionPreview(next.path);
       next.el.scrollIntoView({inline: 'center', block: 'nearest'});
-      
+      suggestionCounter();
       if (modIndex < photos.length) modIndex = modIndex+1;
     }
   } catch (err) {console.log(err)}
@@ -155,7 +155,7 @@ const prevSuggestion = () => {
       focusThumbnail(prev.el);
       suggestionPreview(prev.path);
       prev.el.scrollIntoView({inline: 'center', block: 'nearest'});
-      
+      suggestionCounter();
       if (modIndex >= 0) modIndex = modIndex-1;
     }
   } catch (err) {console.log(err)}

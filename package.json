@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "electron .",
-    "package": "electron-packager . --overwrite"
+    "packageMacOS": "electron-packager . 'Photo Sorter'",
+    "packageWin32": "electron-packager . 'Photo Sorter' --platform=win32 --arch=x64 --win32metadata.CompanyName=lennertDeRyck --win32metadata.ProductName=PhotoSorter  --win32metadata.FileDescription=PhotoSorter --win32metadata.OriginalFilename=PhotoSorter.exe --win32metadata.InternalName=photoSorter"
   },
   "repository": "https://github.com/lennertderyck/photo-sorter",
   "keywords": [
