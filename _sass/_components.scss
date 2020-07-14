@@ -1,10 +1,12 @@
 .controls {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: fit-content;
     margin: 0 auto;
+    margin-top: -25px;
+    z-index: 10;
     
     #toStep3 {
         // opacity: 0;
@@ -20,32 +22,55 @@
     #reset {
         margin-top: 3rem;
     }
+    
+    &.animate__zoomIn {
+        display: flex;
+    }
 }
 
 .moderate {
     display: flex;
-    margin-bottom: 2rem;
+    align-items: center;
+    // margin-bottom: 2rem;
     
     &__btn {
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
-        padding: 1rem;
-        // width: 68px;
-        // height: 68px;
+        padding: .7rem;
+        margin-right: 1rem;
+        background-color: white;
         border: 2px solid #412661;
         border-radius: 100%;
         
-        &:first-child {
-            margin-right: 1rem;
+        .bx {
+            margin-bottom: 0;
+        }
+        
+        &:last-child {
+            margin-right: 0rem;
+        }
+        
+        &--accept {
             background-color: #412661;
             
             .bx {color: white;}
         }
         
-        .bx {
-            color: #412661;
-            margin-bottom: 0;
+        &--reject {border-color: white;}
+        
+        &--prev, &--next {
+            padding: .2rem;
+            background-color: #412661;
+            background-color: white;
+            border-color: white;
+            
+            .bx {color: #6e81e2;}
+        }
+    }
+    
+    .btn {
+        margin-right: 1rem;
+        
+        &:last-child {
+            margin-right: 0rem;
         }
     }
 }

@@ -1,0 +1,166 @@
+
+#step1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+    height: 100vh;
+    color: white;
+    // background-color: #412661;
+    
+    #toStep2 {
+        margin-top: 2rem;
+    }
+    
+    .section-head {
+        margin-bottom: 0;
+    }
+    
+    > .section-head {
+        margin-bottom: 2rem;
+    }
+    
+    a {
+        position: absolute;
+        bottom: 3rem;
+        z-index: 3;
+    }
+    
+    .drag__confirm {        
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        
+        .wrapper {
+            $d: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: $d;
+            height: $d;
+            background-color: #412661;
+            color: white;
+            border-radius: 100%;
+            transform: scale(0);
+            transform-origin: center;
+            transition: all .3s ease;
+            
+            * {color: white;}
+        }
+    }
+    
+    &.drag--over .drag__confirm .wrapper {
+        transform: scale(1);
+        transition: all .3s ease;
+    }
+}
+
+#step2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    // scroll-margin-top: 50vh;
+    
+    .section-head__title {
+        color: #6e81e2;
+    }
+    
+    #suggestionPreview {
+        display: none;
+        height: 40vh;
+        margin: 0 auto;
+        margin-top: 1rem;
+        @include shadow;
+        
+        img {
+            height: 100%;
+            border-radius: 12px;
+        }
+        
+        &.animate__zoomIn {
+            display: block;
+        }
+    }
+    
+    #suggestionCounter {
+        margin-top: 1rem;
+        @include text-modern;
+        font-size: 80%;
+        font-weight: bold;
+        letter-spacing: 1px;
+        color: #412661;
+    }
+    
+    .btn-group {
+        width: fit-content;
+        margin: 0 auto;
+    }
+}
+
+#step3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+    .section-head__title {
+        color: #6e81e2;
+    }
+    
+    #transferPhotos {
+        margin-top: 1rem;
+    }
+    
+    .btn-group {
+        margin: 1rem 0;
+    }
+    
+    [data-sesam-target="folderRenaming"] {
+        // margin-top: 1rem;
+        max-height: 0vh;
+        overflow: hidden;
+        padding-bottom: 0rem;
+        
+        h2 {
+            margin-bottom: 0.5rem;
+        }
+        
+        &.sesam-show {
+            max-height: 100vh;
+            padding-bottom: 1rem;
+        }
+    }
+}
+
+#step4 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+    .section-head__title {
+        color: #6e81e2;
+    }
+    
+    img.meme {
+        margin-top: 2rem;
+        margin-bottom: 2.5rem;
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        object-fit: cover;
+    }
+}

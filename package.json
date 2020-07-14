@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "electron .",
-    "package": "electron-packager ."
+    "package": "electron-packager . --overwrite"
   },
   "repository": "https://github.com/lennertderyck/photo-sorter",
   "keywords": [

@@ -7,9 +7,10 @@ require('electron-reload')(__dirname);
 function createWindow () {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 750,
     title: 'Photo Sorter',
+    titleBarStyle: 'hiddenInset',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }

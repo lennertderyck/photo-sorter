@@ -47,11 +47,26 @@ window.addEventListener('DOMContentLoaded', () => {
     const reset = event.target.closest('[data-action="reset"]');
     const openFolder = event.target.closest('[data-action="openFolder');
     const pathInput = event.target.closest('#path');
-    
+    const next = event.target.closest('[data-action="nextSuggestion"]')
+    const prev = event.target.closest('[data-action="prevSuggestion"]')
+
     if (transfer) transferPhotos();
     if (reset) resetApp();
     if (openFolder) openPath(folderPath);
     if (pathInput) event.preventDefault();
+    if (next) nextSuggestion();
+    if (prev) prevSuggestion(modIndex);
+  })
+  
+  document.addEventListener('dragenter', (event) => {
+    const step1 = event.target.closest('#step1');
+    const dragConfirmWrapper = event.target.closest('#step1 .drag__confirm .wrapper')
+    if (step1 || dragConfirmWrapper) dragConfirm(step1);
+  })
+  
+  document.addEventListener('dragleave', (event) => {
+    const step1 = event.target.closest('#step1');
+    if (step1) dragOut(step1);
   })
     
   const listPhotos = (folderPath) => {
@@ -63,8 +78,10 @@ window.addEventListener('DOMContentLoaded', () => {
       if (stat.isDirectory() == false && isImage(`${folderPath}/${file}`) == true) addPhotoSuggestion(file, `${folderPath}/${file}`);
     }
     
-    nextSuggestion(0);
+    moderate(0);
     node('#step2').scrollIntoView();
+    dragOut(node('#step1'));
+    node('#controls').classList.add('animate__zoomIn');
   }
 
   const photoList = node('#photoList');
@@ -84,36 +101,78 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 })
 
+const dragConfirm = (node) => {
+  node.classList.add('drag--over');
+}
+
+const dragOut = (node) => {
+  node.classList.remove('drag--over');
+}
+
 const emptyPhotoList = () => {
   node('#photoList').innerHTML = '';
 }
 
-const nextSuggestion = (index) => {
-  try {
-    const curr = node('#photoList .suggestion', true)[index],
-    prev = node('#photoList .suggestion', true)[index-1];
+const moderate = (index) => {
+  try {    
+    const curr = node('#photoList .suggestion', true)[index];
+    const prev = node('#photoList .suggestion', true)[index-1];
     
+    console.log(index);
+    suggestionPreview(photos[index].path);
     curr.scrollIntoView({inline: 'center', block: 'nearest'});
     
-    if (prev) prev.classList.remove('suggestion--selected');
-    curr.classList.add('suggestion--selected');
+    if (prev) unfocusThumbnail(prev);
+    focusThumbnail(curr);
     
     node('#suggestionCounter').innerHTML = suggestionCounter();
-  } catch (error) {}
+  } catch (err) {console.log(err)}
+}
+
+const nextSuggestion = () => {
+  try {
+    const current = photos[modIndex];
+    const next = photos[modIndex+1];
+    
+    if (next) {      
+      unfocusThumbnail(current.el);
+      focusThumbnail(next.el);
+      suggestionPreview(next.path);
+      next.el.scrollIntoView({inline: 'center', block: 'nearest'});
+      
+      if (modIndex < photos.length) modIndex = modIndex+1;
+    }
+  } catch (err) {console.log(err)}
+}
+
+const prevSuggestion = () => {
+  try {
+    const current = photos[modIndex];
+    const prev = photos[modIndex-1];
+    
+    if (prev) {      
+      unfocusThumbnail(current.el);
+      focusThumbnail(prev.el);
+      suggestionPreview(prev.path);
+      prev.el.scrollIntoView({inline: 'center', block: 'nearest'});
+      
+      if (modIndex >= 0) modIndex = modIndex-1;
+    }
+  } catch (err) {console.log(err)}
 }
 
 const acceptSuggestion = () => {
   photos[modIndex].status = 'accept';
   photos[modIndex].el.setAttribute('data-status','accept');
-  modIndex = modIndex+1;
-  nextSuggestion(modIndex);
+  modIndexIncr();
+  moderate(modIndex);
 }
 
 const rejectSuggestion = () => {
   photos[modIndex].status = 'reject';
   photos[modIndex].el.setAttribute('data-status','reject');
-  modIndex = modIndex+1;
-  nextSuggestion(modIndex)
+  modIndexIncr();
+  moderate(modIndex);
 }
 
 const suggestionCounter = () => {
@@ -141,6 +200,26 @@ const resetApp = () => {
 
 const openPath = (path) => {
   open(path)
+}
+
+const suggestionPreview = (path) => {
+  const preview = node('#suggestionPreview');
+  const animation = 'animate__zoomIn'
+  
+  preview.querySelector('img').src = path;
+  preview.classList.add(animation);  
+}
+
+const focusThumbnail = (node) => {
+  node.classList.add('suggestion--selected')
+}
+
+const unfocusThumbnail = (node) => {
+  node.classList.remove('suggestion--selected')
+}
+
+const modIndexIncr = () => {
+  if (modIndex < photos.length-1) modIndex = modIndex+1;
 }
 
 
