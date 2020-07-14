@@ -1,45 +1,52 @@
-# electron-quick-start
+# Photo Sorter
+Deze app laat gebruikers toe eenvoudig goede en slechte foto's te beoordelen. De werkwijze in de app werd hier voor gebaseerd op Tinder.
 
-**Clone and run for a quick way to see Electron in action.**
+Goede foto's worden dan gescheiden van de slechte door deze te verplaatsen naar een folder afhankelijk van hun markering.
 
-This is a minimal Electron application based on the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start) within the Electron documentation.
+## Downloaden
+De laatste release vind je [hier](https://github.com/lennertderyck/photo-sorter/releases/latest).
 
-**Use this app along with the [Electron API Demos](https://electronjs.org/#get-started) app for API code examples to help you get started.**
+De app is beschikbaar voor Windows en Mac:
+- Windows: https://github.com/lennertderyck/photo-sorter/releases/download/v1.2.1-beta/Photo.Sorter-win32-x64.zip
+- Mac: https://github.com/lennertderyck/photo-sorter/releases/download/v1.2.1-beta/Photo.Sorter-darwin-x64.zip
 
-A basic Electron application needs just these files:
+## Installeren
+#### Windows
+- Unzip de folder
+- Zoek naar *Photo Sorter.exe* en open het
+- Krijg je een beveilingsmelding? Klik op 'Meer informatie' en dan op 'Toch uitvoeren'.
+- Na een paar seconden wachten is de app klaar voor gebruik.
 
-- `package.json` - Points to the app's main file and lists its details and dependencies.
-- `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
-- `index.html` - A web page to render. This is the app's **renderer process**.
+#### Mac
+- Unzip de folder
+- Zoek naar *Photo Sorter* en open het
+- Je krijgt waarschijnlijk een beveilingsmelding. Volg hier voor de volgende stappen.
+- Sluit de melding
+- Ga naar Systeemvoorkeuren > Beveiliging en privacy > tabblad Algemeen
+- Hier zal je een melding zien over deze app en een knop "Open toch"
+- Na het aanklikken van deze knop wordt de applicatie normaal geopend en zal je deze stappen niet meer moeten doorlopen
 
-You can learn more about each of these components within the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start).
+> De reden achter deze beveiligingsmeldingen is het feit dat ik niet over een certificatie beschik van Apple of Microsoft omdat je hier jaarlijks voor moet betalen.
 
-## To Use
+## Werking
+#### Stap 1 – Importeren
+Importeer afbeeldingen door een folder met afbeeldingen naar de app te slepen, voorlopig moet dit een folder zijn maar in een volgende grote update zal je ook gewoon losse bestanden kunnen importeren.
 
-To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+Als alle afbeeldingen succesvol geïmporteerd zijn zullen deze ingeladen worden.
 
-```bash
-# Clone this repository
-git clone https://github.com/electron/electron-quick-start
-# Go into the repository
-cd electron-quick-start
-# Install dependencies
-npm install
-# Run the app
-npm start
-```
+> Voorlopig is het nog niet mogelijk om submappen te doorzoeken op afbeeldingen, dit staat echter wel op de roadmap.
 
-Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
+#### Stap 2 – Markeren
+Gebruik de like of dislike knop om aan te geven of een afbeelding goed of slecht is.
 
-## Resources for Learning Electron
+> Je hoeft niet alle afbeeldingen te markeren om door te gaan, er is een mogelijkheid om na een aantal afbeeldingen deze stap over te slaan.
 
-- [electronjs.org/docs](https://electronjs.org/docs) - all of Electron's documentation
-- [electronjs.org/community#boilerplates](https://electronjs.org/community#boilerplates) - sample starter apps created by the community
-- [electron/electron-quick-start](https://github.com/electron/electron-quick-start) - a very basic starter Electron app
-- [electron/simple-samples](https://github.com/electron/simple-samples) - small applications with ideas for taking them further
-- [electron/electron-api-demos](https://github.com/electron/electron-api-demos) - an Electron app that teaches you how to use Electron
-- [hokein/electron-sample-apps](https://github.com/hokein/electron-sample-apps) - small demo apps for the various Electron APIs
+#### Stap 3 – Bevestigen
+Vooraleer de afbeeldingen verplaatst worden in een folder naargelang hun markering zal je moeten bevestigen, tijdens deze stap kan je ook de foldernaam wijzigen.
 
-## License
+#### Stap 4 – Relax
+Je foto's worden tijdens deze stap overgezet. Je krijgt op dit scherm ook een knop te zien waarmee je de folder kan openen.
 
-[CC0 1.0 (Public Domain)](LICENSE.md)
+## Voor de nerds
+Deze app werd gemaakt met [Electron](https://www.electronjs.org/), een door GitHub ontwikkeld en op Node.js gebaseerd framework om desktop-apps te ontwikkelen met webtechnologieën.
+
