@@ -26,7 +26,7 @@ De app is beschikbaar voor Windows en Mac:
 - Hier zal je een melding zien over deze app en een knop "Open toch"
 - Na het aanklikken van deze knop wordt de applicatie normaal geopend en zal je deze stappen niet meer moeten doorlopen
 
-> De reden achter deze beveiligingsmeldingen is het feit dat ik niet over een certificatie beschik van Apple of Microsoft omdat je hier jaarlijks voor moet betalen.
+> De reden achter deze beveiligingsmeldingen is het feit dat ik niet gecertificeerd ben door Apple of Microsoft omdat je hier jaarlijks voor moet betalen.
 
 ## Werking
 #### Stap 1 – Importeren
