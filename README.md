@@ -1,5 +1,5 @@
 # Photo Sorter
-Deze app laat gebruikers toe eenvoudig goede en slechte foto's te beoordelen. De werkwijze in de app werd hier voor gebaseerd op Tinder.
+Deze app laat gebruikers toe eenvoudig goede en slechte foto's te beoordelen. Het gebruik van de app werd hier voor gebaseerd op Tinder.
 
 Goede foto's worden dan gescheiden van de slechte door deze te verplaatsen naar een folder afhankelijk van hun markering.
 
