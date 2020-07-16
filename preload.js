@@ -222,4 +222,18 @@ const modIndexIncr = () => {
   if (modIndex < photos.length-1) modIndex = modIndex+1;
 }
 
+const updateChecker = async () => {
+  const response = await fetch('https://raw.githubusercontent.com/lennertderyck/photo-sorter/master/package.json');
+  const currentVersion = await response.json();
+  
+  const thisVersion = require('./package.json');
+  
+  if (thisVersion !== currentVersion) console.log('there is a new version available')
+  
+  console.log(newestVersion.version);
+  console.log(thisVersion.version);
+}
+
+updateChecker();
+
 
