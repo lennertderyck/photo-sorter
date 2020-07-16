@@ -28,6 +28,9 @@ De app is beschikbaar voor Windows en Mac:
 
 > De reden achter deze beveiligingsmeldingen is het feit dat ik niet gecertificeerd ben door Apple of Microsoft omdat je hier jaarlijks voor moet betalen.
 
+## Updates
+Updaten kan gewoon door de huidige app te vervangen door het bestand van de update.
+
 ## Werking
 #### Stap 1 – Importeren
 Importeer afbeeldingen door een folder met afbeeldingen naar de app te slepen, voorlopig moet dit een folder zijn maar in een volgende grote update zal je ook gewoon losse bestanden kunnen importeren.
