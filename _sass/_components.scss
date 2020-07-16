@@ -116,6 +116,7 @@
 
 .btn-group {
     display: flex;
+    width: fit-content;
     
     .btn {
         margin-right: 1rem;
@@ -156,5 +157,53 @@
         border: 2px solid #5664aa;
         border-radius: 5px;    
         font-size: 100%;
+    }
+}
+
+#newVersionNotify {
+    display: none;
+    position: fixed;
+    right: 0;
+    bottom: 0px;
+    z-index: 10;
+    transform-origin: bottom right;
+    
+    .background {
+        display: block;
+        position: absolute;
+        bottom: -300px;
+        left: -10%;
+        width: 600px;
+        height: 600px;
+        border-radius: 100%;
+        background: #412661;
+        z-index: -1;
+    }
+    
+    .message {
+        padding: 2rem;
+        text-align: right;
+        color: white;
+        z-index: 10;
+        
+        > .bx {
+            margin-bottom: .5rem;
+            font-size: 44px;
+            color: #6e81e2;
+        }
+        
+        h3 {
+            color: white;
+            margin-bottom: .2rem;
+        }
+        
+        .btn-group {
+            margin-top: 1.5rem;
+            margin-left: auto;
+        }
+    }
+    
+    &.animate__zoomIn {
+        display: block;
     }
 }

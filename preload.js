@@ -5,6 +5,7 @@ const path = require('path');
 const moveFile = require('move-file');
 const isImage = require('is-image');
 const open = require('open');
+const os = require('check-os')
 
 const node = (selector, multiple = false) => {
   try {
@@ -47,8 +48,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const reset = event.target.closest('[data-action="reset"]');
     const openFolder = event.target.closest('[data-action="openFolder');
     const pathInput = event.target.closest('#path');
-    const next = event.target.closest('[data-action="nextSuggestion"]')
-    const prev = event.target.closest('[data-action="prevSuggestion"]')
+    const next = event.target.closest('[data-action="nextSuggestion"]');
+    const prev = event.target.closest('[data-action="prevSuggestion"]');
+    const updateDownload = event.target.closest('#updateDownload');
+    const closeUpdateMessageBtn = event.target.closest('[data-action="closeUpdateMessage"]');
 
     if (transfer) transferPhotos();
     if (reset) resetApp();
@@ -56,6 +59,8 @@ window.addEventListener('DOMContentLoaded', () => {
     if (pathInput) event.preventDefault();
     if (next) nextSuggestion();
     if (prev) prevSuggestion(modIndex);
+    if (updateDownload) updateUpdateMessage();
+    if (closeUpdateMessageBtn) closeUpdateMessage();
   })
   
   document.addEventListener('dragenter', (event) => {
@@ -233,21 +238,65 @@ const getAppVersions = async () => {
   }
 }
 
-const updateChecker = async () => {
-  if (thisVersion !== currentVersion) console.log('there is a new version available')
-}
-
 const checkForRelease = async () => {
   const versions = await getAppVersions();
+  let response = await fetch(`https://github.com/lennertderyck/photo-sorter/releases/tag/v${versions.current}`);
   
-  console.log(versions)
-  // try {
-  //   let response = await fetch()
-  // } catch (err) {
-    
-  // }
+  if (response.status == 404) return {
+    releaseAvailable: false, // with version number of most recent package.json
+    versions: {
+      this: versions.this,
+      current: versions.current
+    }
+  }; 
+  return {
+    releaseAvailable: true, // with version number of most recent package.json
+    versions: {
+      this: versions.this,
+      current: versions.current
+    }
+  };
 }
 
-checkForRelease();
+const updateChecker = async () => {
+  const releaseData = await checkForRelease();
+  
+  if (releaseData.versions.this !== releaseData.versions.current && releaseData.releaseAvailable == true) node('#newVersionNotify').classList.add('animate__zoomIn');
+  else console.log('no new version available')
+  
+  node('#updateDownload').href = createUpdateLink(releaseData);
+}
 
+const createUpdateLink = (releaseData) => {
+  let name = '';
+  
+  if (os.isWindows) name = 'Photo.Sorter-win32-x64.zip';
+  if (os.isMacOS) name = 'Photo.Sorter-darwin-x64.zip';
+  
+  return `https://github.com/lennertderyck/photo-sorter/releases/download/v${releaseData.versions.current}/${name}`
+}
+
+updateChecker();
+
+const updateUpdateMessage = () => {
+  node('#newVersionNotify .message').innerHTML = `
+    <i class='bx bx-cloud-download'></i>
+    <h3>De update wordt gedownload</h3>
+    <p><small>Meer info over updates & installatie lees je op GitHub</small></p>
+    <div class="btn-group">
+      <a href="https://github.com/lennertderyck/photo-sorter/blob/master/README.md#installeren" data-action="closeUpdateMessage" class="btn btn--simple" download><i class='bx bx-right-arrow-alt'></i> meer lezen</a>
+    </div>
+  `;
+  
+  setTimeout(closeUpdateMessage, 10000);
+}
+
+const closeUpdateMessage = () => {
+  console.log('close');
+  node('#newVersionNotify').classList.remove('animate__delay-2s');
+  node('#newVersionNotify').classList.add('animate__zoomOut');
+  setTimeout(() => {
+    node('#newVersionNotify').classList.remove('animate__zoomIn');
+  }, 1000);
+}
 
