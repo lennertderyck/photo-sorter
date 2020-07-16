@@ -1,5 +1,5 @@
 # Photo Sorter
-Deze app laat gebruikers toe eenvoudig goede en slechte foto's te beoordelen. De werkwijze in de app werd hier voor gebaseerd op Tinder.
+Deze app laat gebruikers toe eenvoudig goede en slechte foto's te beoordelen. Het gebruik van de app werd hier voor gebaseerd op Tinder.
 
 Goede foto's worden dan gescheiden van de slechte door deze te verplaatsen naar een folder afhankelijk van hun markering.
 
@@ -7,8 +7,8 @@ Goede foto's worden dan gescheiden van de slechte door deze te verplaatsen naar 
 De laatste release vind je [hier](https://github.com/lennertderyck/photo-sorter/releases/latest).
 
 De app is beschikbaar voor Windows en Mac:
-- Windows: https://github.com/lennertderyck/photo-sorter/releases/download/v1.2.1-beta/Photo.Sorter-win32-x64.zip
-- Mac: https://github.com/lennertderyck/photo-sorter/releases/download/v1.2.1-beta/Photo.Sorter-darwin-x64.zip
+- Windows: https://github.com/lennertderyck/photo-sorter/releases/download/v1.2.1/Photo.Sorter-win32-x64.zip
+- Mac: https://github.com/lennertderyck/photo-sorter/releases/download/v1.2.1/Photo.Sorter-darwin-x64.zip
 
 ## Installeren
 #### Windows
@@ -26,7 +26,7 @@ De app is beschikbaar voor Windows en Mac:
 - Hier zal je een melding zien over deze app en een knop "Open toch"
 - Na het aanklikken van deze knop wordt de applicatie normaal geopend en zal je deze stappen niet meer moeten doorlopen
 
-> De reden achter deze beveiligingsmeldingen is het feit dat ik niet over een certificatie beschik van Apple of Microsoft omdat je hier jaarlijks voor moet betalen.
+> De reden achter deze beveiligingsmeldingen is het feit dat ik niet gecertificeerd ben door Apple of Microsoft omdat je hier jaarlijks voor moet betalen.
 
 ## Werking
 #### Stap 1 – Importeren
