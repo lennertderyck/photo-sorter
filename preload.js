@@ -265,6 +265,8 @@ const updateChecker = async () => {
   else console.log('no new version available')
   
   node('#updateDownload').href = createUpdateLink(releaseData);
+  
+  console.log(releaseData);
 }
 
 const createUpdateLink = (releaseData) => {
