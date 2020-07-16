@@ -16,6 +16,7 @@ De app is beschikbaar voor Windows en Mac:
 - Zoek naar *Photo Sorter.exe* en open het
 - Krijg je een beveilingsmelding? Klik op 'Meer informatie' en dan op 'Toch uitvoeren'.
 - Na een paar seconden wachten is de app klaar voor gebruik.
+- Verplaats *Photo Sorter.exe* naar waar je wilt
 
 #### Mac
 - Unzip de folder
@@ -25,6 +26,7 @@ De app is beschikbaar voor Windows en Mac:
 - Ga naar Systeemvoorkeuren > Beveiliging en privacy > tabblad Algemeen
 - Hier zal je een melding zien over deze app en een knop "Open toch"
 - Na het aanklikken van deze knop wordt de applicatie normaal geopend en zal je deze stappen niet meer moeten doorlopen
+- Verplaats *Photo Sorter* naar je Apps folder
 
 > De reden achter deze beveiligingsmeldingen is het feit dat ik niet gecertificeerd ben door Apple of Microsoft omdat je hier jaarlijks voor moet betalen.
 
