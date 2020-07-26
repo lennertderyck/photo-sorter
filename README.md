@@ -7,7 +7,7 @@ Deze app laat gebruikers toe eenvoudig goede en slechte foto's te beoordelen. He
 
 Goede foto's worden dan gescheiden van de slechte door deze te verplaatsen naar een folder afhankelijk van hun markering.
 
-## Do wnloaden
+## Downloaden
 De laatste release vind je [hier](https://github.com/lennertderyck/photo-sorter/releases/latest).
 
 De app is beschikbaar voor Windows en Mac:
