@@ -35,7 +35,9 @@ De app is beschikbaar voor Windows en Mac:
 > De reden achter deze beveiligingsmeldingen is het feit dat ik niet gecertificeerd ben door Apple of Microsoft omdat je hier jaarlijks voor moet betalen.
 
 ## Updates
-Updaten kan gewoon door de huidige app te vervangen door het bestand van de update. Vanaf versie 1.3.0 krijg je automatisch een melding bij het opstarten van de app wanneer er een update beschikbaar is. Deze kan je dan meteen downloaden en installeren.
+Updaten kan gewoon door de huidige app te vervangen door het bestand van de update.
+
+Vanaf versie 1.3.0 krijg je automatisch een melding bij het opstarten van de app wanneer er een update beschikbaar is. Deze kan je dan meteen downloaden en installeren.
 
 ## Werking
 #### Stap 1 – Importeren
