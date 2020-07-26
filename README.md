@@ -61,4 +61,4 @@ Je foto's worden tijdens deze stap overgezet. Je krijgt op dit scherm ook een kn
 ## Voor de nerds
 Deze app werd gemaakt met [Electron](https://www.electronjs.org/), een door GitHub ontwikkeld en op Node.js gebaseerd framework om desktop-apps te ontwikkelen met webtechnologieën.
 
-In deze app maak ik ook gebruik van [Bootstrap 5 alpha](https://blog.getbootstrap.com/2020/06/16/bootstrap-5-alpha/) voor een betere intergatie, indien je problemen met de interface ervaart kan je altijd een issue aanmaken.
+In deze app maak ik ook gebruik van [Bootstrap 5 alpha](https://blog.getbootstrap.com/2020/06/16/bootstrap-5-alpha/) voor een betere integratie, indien je problemen met de interface ervaart kan je altijd een issue aanmaken.
