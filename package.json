@@ -1,6 +1,6 @@
 {
   "name": "photo-sorter",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "An Electron app to sort good and bad photo's in a Tinder-like way",
   "main": "main.js",
   "scripts": {
@@ -26,9 +26,11 @@
   "dependencies": {
     "check-os": "^1.0.1",
     "electron-reload": "^1.5.0",
+    "extract-zip": "^2.0.1",
     "is-image": "^3.0.0",
     "move-file": "^2.0.0",
     "open": "^7.0.4",
+    "request": "^2.88.2",
     "sass": "^1.26.10"
   }
 }

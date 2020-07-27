@@ -5,7 +5,9 @@ const path = require('path');
 const moveFile = require('move-file');
 const isImage = require('is-image');
 const open = require('open');
-const os = require('check-os')
+const os = require('check-os');
+const unzip = require('extract-zip');
+const request = require('request');
 
 const node = (selector, multiple = false) => {
   try {
@@ -280,7 +282,7 @@ const createUpdateLink = (releaseData) => {
 
 updateChecker();
 
-const updateUpdateMessage = () => {
+const updateUpdateMessage = async () => {
   node('#newVersionNotify .message').innerHTML = `
     <i class='bx bx-cloud-download'></i>
     <h3>De update wordt gedownload</h3>
@@ -294,7 +296,6 @@ const updateUpdateMessage = () => {
 }
 
 const closeUpdateMessage = () => {
-  console.log('close');
   node('#newVersionNotify').classList.remove('animate__delay-2s');
   node('#newVersionNotify').classList.add('animate__zoomOut');
   setTimeout(() => {
@@ -302,3 +303,19 @@ const closeUpdateMessage = () => {
   }, 1000);
 }
 
+const download = (uri, filename, callback) => {
+    request.head(uri, (err, res, body) => {
+        // console.log('content-type:', res.headers['content-type']);
+        // console.log('content-length:', res.headers['content-length']);
+        request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+    });
+};
+
+const updateInstaller = async () => {
+  try {
+    await extract(source, { dir: target })
+    console.log('Extraction complete')
+  } catch (err) {
+    // handle any errors
+  }
+}
