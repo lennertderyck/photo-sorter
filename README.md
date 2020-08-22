@@ -1,4 +1,4 @@
-[Downloaden](#downloaden) | [Installeren](#installeren) | [Updates](#updates) | [Werking](#werking) | [Nerd stuff 🤓](#voor-de-nerds)
+[Downloaden](#downloaden) | [Installeren](#installeren) | [Updates](#updates) | [Werking](#werking) | [Nerd stuff 👓](#voor-de-nerds)
 
 ---
 
