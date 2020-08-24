@@ -11,8 +11,8 @@ Goede foto's worden dan gescheiden van de slechte door deze te verplaatsen naar 
 De laatste release vind je [hier](https://github.com/lennertderyck/photo-sorter/releases/latest).
 
 De app is beschikbaar voor Windows en Mac:
-- Windows: https://github.com/lennertderyck/photo-sorter/releases/download/v1.3.0/Photo.Sorter-win32-x64.zip
-- Mac: https://github.com/lennertderyck/photo-sorter/releases/download/v1.3.0/Photo.Sorter-darwin-x64.zip
+- [Download voor Windows](https://github.com/lennertderyck/photo-sorter/releases/download/v1.3.1/Photo.Sorter-win32-x64.zip)
+- [Download voor Mac](https://github.com/lennertderyck/photo-sorter/releases/download/v1.3.1/Photo.Sorter-darwin-x64.zip)
 
 ## Installeren
 #### Windows
