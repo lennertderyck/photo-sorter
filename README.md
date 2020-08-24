@@ -14,8 +14,6 @@ De app is beschikbaar voor Windows en Mac:
 - [Download voor Windows](https://git.lennertderyck.be/photo-sorter/?platform=win32)
 - [Download voor Mac](https://git.lennertderyck.be/photo-sorter/?platform=darwin)
 
-<a href="https://git.lennertderyck.be/photo-sorter/?platform=darwin" target="_blank">Hello, world!</a>
-
 ## Installeren
 #### Windows
 - Unzip de folder
