@@ -9,6 +9,8 @@ function createWindow () {
   const mainWindow = new BrowserWindow({
     width: 1200,
     height: 750,
+    minWidth: 750,
+    minHeight: 500,
     title: 'Photo Sorter',
     titleBarStyle: 'hiddenInset',
     webPreferences: {

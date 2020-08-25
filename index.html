@@ -89,14 +89,14 @@
         </div>
         <div data-sesam-target="folderRenaming">
           <div class="input-bundle input-bundle--horizontal">
-            <div class="input-group">
-              <label for="folderNameAccept">Goede foto's</label>
-              <input type="text" name="foldername_accept" id="folderNameAccept" value="GOEDGEKEURD">
-            </div>
-            <div class="input-group">
-              <label for="folderNameReject">Slechte foto's</label>
-              <input type="text" name="foldername_reject" id="folderNameReject" value="NIET GOED">
-            </div>
+            <label class="input-group">
+              <span>Goede foto's</span>
+              <input type="text" name="foldername_accept" value="Goed">
+            </label>
+              <label class="input-group">
+                <span>Slechte foto's</span>
+                <input type="text" name="foldername_reject" value="Slecht">
+              </label>
           </div>
         </div>
       </div>
@@ -130,6 +130,11 @@
           <a id="updateDownload" href="" class="btn btn--simple" download><i class='bx bxs-arrow-to-bottom'></i> Download</a>
           <button data-action="closeUpdateMessage" class="btn btn--simple"><i class='bx bx-x-circle'></i> sluiten</button>
         </div>
+      </div>
+    </div>
+    
+    <div id="toasts" class="toasts">
+      <div class="toasts__wrapper">
       </div>
     </div>
     

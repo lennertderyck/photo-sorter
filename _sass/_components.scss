@@ -140,14 +140,18 @@
 .input-group {
     width: 100%;
     
-    label {
-        display: flex;
-        @include text-modern;
+    // display: flex;
+    @include text-modern;
+    color: #6e81e2;
+    color: #5664aa;
+    
+    
+    span {
+        display: block;
         margin-bottom: 0.3rem;
-        color: #6e81e2;
-        color: #5664aa;
+        @include text-modern;
         font-size: 80%;
-        font-weight: bold;
+    font-weight: bold;
     }
     
     input[type="text"], input[type="number"], input[type="password"] {
@@ -205,5 +209,81 @@
     
     &.animate__zoomIn {
         display: block;
+    }
+}
+
+.toasts {
+    position: fixed;
+    left: 0px; right: 0px; 
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    // padding: 2rem;
+    z-index: 10;
+    
+    &__wrapper {
+        width: fit-content;
+    }
+    
+    .toast {
+        --timer-duration: 2000ms;
+        
+        position: relative;
+        margin-bottom: 2rem;
+        width: fit-content;
+        background-color: #f8f8f8;
+        border-radius: 5px;
+        
+        &__wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 1rem 1rem 1rem .6rem;
+            z-index: 1;
+        }
+        
+        &__timer {
+            position: absolute;
+            left: 0px; right: 0%;
+            top: 0px; bottom: 0px;
+            background-color: #ececec;
+            animation-name: toastTimer;
+            animation-duration: var(--timer-duration);
+            animation-fill-mode: forwards;
+        }
+        
+        &__title {
+            margin-bottom: 0.3rem;
+            font-size: 80%;
+            font-weight: bold;
+            color: #6e81e2;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        &__body * {
+            font-size: 90%;
+            color: #545454;
+            font-weight: 500;
+            
+            &:last-child {margin-bottom: 0;}
+        }
+        
+        [data-action="closeToast"] {
+            display: flex;
+            align-items: center;
+            margin-right: 0.6rem;
+            height: 100%;
+            cursor: pointer;
+        }
+    }
+}
+
+@keyframes toastTimer {
+    0% {
+        right: 0%;
+    }
+    100% {
+        right: 100%;
     }
 }
