@@ -17,10 +17,10 @@ De app is beschikbaar voor Windows en Mac:
 ## Installeren
 #### Windows
 - Unzip de folder
-- Zoek naar *Photo Sorter.exe* en open het
+- Zoek naar *Photo Sorter(.exe)* en open het
 - Krijg je een beveilingsmelding? Klik op 'Meer informatie' en dan op 'Toch uitvoeren'.
 - Na een paar seconden wachten is de app klaar voor gebruik.
-- Verplaats *Photo Sorter.exe* naar waar je wilt
+- Verplaats *Photo Sorter(.exe)* naar waar je wilt
 
 #### Mac
 - Unzip de folder
