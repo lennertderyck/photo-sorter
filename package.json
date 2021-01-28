@@ -20,7 +20,7 @@
   "author": "Lennert De Ryck",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^9.1.0",
+    "electron": "^9.4.0",
     "electron-packager": "^15.0.0"
   },
   "dependencies": {
